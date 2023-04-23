@@ -2,6 +2,7 @@
   --color-main: #f9f9f9f9;
   --color-menu: #86efac;
   --color-letter: #202020;
+  --color-red: #ff0000;
 }
 * {
   margin: 0;
@@ -122,8 +123,14 @@ a {
   padding: 0.6rem 2rem;
   background-color: var(--color-main);
   border-radius: 0.9rem;
+  font-size: 1.2rem;
 }
-
+.bg-like {
+  color: var(--color-red);
+}
+.bg-nolike {
+  color: var(--color-letter);
+}
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
