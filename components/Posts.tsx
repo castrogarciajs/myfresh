@@ -1,4 +1,5 @@
 import { IPROPS_POST } from "@/utils/type.ts";
+import Button from "@/components/Button.tsx";
 
 function Posts(props: IPROPS_POST) {
   return (
@@ -11,6 +12,9 @@ function Posts(props: IPROPS_POST) {
             </div>
             <div class="card-body">
               <p class="body">{post.body}</p>
+            </div>
+            <div class="card-button">
+              <Button />
             </div>
           </div>
         ) : (
