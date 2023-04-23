@@ -1,4 +1,8 @@
 function PagePublic() {
+  const handleSubmit = (event: Event) => {
+    event.preventDefault();
+    console.log("event");
+  };
   return (
     <div class="container-form">
       <form class="form-container">
@@ -23,7 +27,9 @@ function PagePublic() {
           ></textarea>
         </p>
         <p class="content-button">
-          <button type="submit">public</button>
+          <button onClick={handleSubmit} type="submit">
+            public
+          </button>
         </p>
       </form>
     </div>
