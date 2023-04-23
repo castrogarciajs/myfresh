@@ -1,5 +1,5 @@
 import { IPROPS_POST } from "@/utils/type.ts";
-import Button from "@/components/Button.tsx";
+import Button from "@/islands/Like.tsx";
 
 function Posts(props: IPROPS_POST) {
   return (
