@@ -1,5 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
+import Posts from "@/components/Posts.tsx";
 
 export interface IPOST {
   userId: number;
@@ -7,7 +8,7 @@ export interface IPOST {
   title: string;
   body: string;
 }
-export const handler: Handlers<IPOST | null> = {
+export const handler: Handlers<IPOST[] | null> = {
   async GET(_, ctx) {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
     const data = await res.json();
@@ -19,14 +20,16 @@ export const handler: Handlers<IPOST | null> = {
   },
 };
 
-export default function Home(props: PageProps<IPOST | null>) {
+export default function Home(props: PageProps<IPOST[] | null>) {
   console.log(props);
   return (
     <>
       <Head>
         <title>Fresh</title>
       </Head>
-      <h1>Hello World</h1>
+      <div>
+        <Posts data={props.data} />
+      </div>
     </>
   );
 }
