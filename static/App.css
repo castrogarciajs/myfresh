@@ -1,0 +1,57 @@
+:root {
+  --color-main: #f9f9f9f9;
+}
+* {
+  margin: 0;
+}
+html {
+  font-size: 16px;
+}
+body {
+  background-color: var(--color-main);
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+
+.header {
+  background-color: var(--color-main);
+  width: 100%;
+  max-width: max-content;
+  padding: 2rem 4rem;
+
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.myfresh {
+  font-size: 1.5rem;
+  font-family: Arial;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.menu .menu-link {
+  color: gray;
+  padding: 1rem 0;
+}

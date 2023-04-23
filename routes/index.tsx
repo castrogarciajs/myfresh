@@ -21,13 +21,9 @@ export const handler: Handlers<IPOST[] | null> = {
 };
 
 export default function Home(props: PageProps<IPOST[] | null>) {
-  console.log(props);
   return (
     <>
-      <Head>
-        <title>Fresh</title>
-      </Head>
-      <div>
+      <div class="container">
         <Posts data={props.data} />
       </div>
     </>

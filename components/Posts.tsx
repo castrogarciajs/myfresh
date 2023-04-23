@@ -5,16 +5,16 @@ function Posts(props: IPROPS_POST) {
     <>
       {props.data?.map((post) =>
         props.data ? (
-          <div>
-            <div>
-              <h2>{post.title}</h2>
+          <div class="card">
+            <div class="card-title">
+              <h2 class="title">{post.title}</h2>
             </div>
-            <div>
-              <p>{post.body}</p>
+            <div class="card-body">
+              <p class="body">{post.body}</p>
             </div>
           </div>
         ) : (
-          <h2>no hay posts</h2>
+          <h2 class="not-posts">no hay posts</h2>
         )
       )}
     </>
