@@ -21,6 +21,11 @@ a {
   text-decoration: none;
   color: var(--color-letter);
 }
+input,
+textarea {
+  outline: none;
+  border: none;
+}
 .container {
   margin-top: 2.5rem;
   display: flex;
@@ -120,22 +125,51 @@ a {
 .like {
   display: inline-block;
   cursor: pointer;
-  padding: 0.6rem 2rem;
-  background-color: var(--color-main);
   border-radius: 0.9rem;
+  background-color: transparent;
   font-size: 1.2rem;
+  border: none;
 }
-.bg-like {
+
+.bg-like > * {
+  transform: scale(1.5);
   color: var(--color-red);
+  transition: color 0.3s ease;
+
+  animation: pulse 1s ease-out;
+}
+@keyframes pulse {
+  to {
+    transform: scale(2);
+  }
 }
 .bg-nolike {
   color: var(--color-letter);
+}
+
+.container-form {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.content-title,
+.content-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
   }
-  .home {
+  .home,
+  .container-form {
     height: 77vh;
   }
   .home h1 {
