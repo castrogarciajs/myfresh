@@ -1,5 +1,6 @@
 import { AppProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
+import Header from "@/components/Header.tsx";
 
 function App({ Component }: AppProps) {
   return (
@@ -8,6 +9,7 @@ function App({ Component }: AppProps) {
         <title>MyFresh</title>
         <link rel="stylesheet" href="/App.css" />
       </Head>
+      <Header />
       <Component />
     </>
   );
