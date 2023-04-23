@@ -7,21 +7,21 @@ function Header() {
     { name: "Docs", href: "/docs" },
   ];
   return (
-    <div>
-      <div>
+    <header class="header">
+      <div class="header-title">
         <Lemon />
-        <div>
-          <h2>My Fresh</h2>
-        </div>
+        <div class="myfresh">My Fresh</div>
       </div>
-      <ul>
+      <ul class="menu">
         {menus.map((menu) => (
           <li>
-            <a href={menu.href}>{menu.name}</a>
+            <a href={menu.href} class="menu-link">
+              {menu.name}
+            </a>
           </li>
         ))}
       </ul>
-    </div>
+    </header>
   );
 }
 
