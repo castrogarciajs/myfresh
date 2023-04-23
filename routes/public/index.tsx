@@ -45,7 +45,7 @@ function PagePublic(props: PageProps) {
           />
         </p>
         <p class="content-description">
-          <label class="description">¿que estas pensando?</label>
+          <label class="description">¿Que estas pensando?</label>
           <textarea
             name="description"
             class="form-description"
