@@ -8,7 +8,7 @@ function Header() {
   return (
     <header class="header">
       <div class="header-title">
-        <Lemon size={35} />
+        <Lemon size={35} stroke={3} />
         <div class="myfresh">
           <a href="/" class="menu-link">
             My Fresh
