@@ -1,5 +1,7 @@
 :root {
   --color-main: #f9f9f9f9;
+  --color-menu: #86efac;
+  --color-letter: #202020;
 }
 * {
   margin: 0;
@@ -16,6 +18,7 @@ li {
 }
 a {
   text-decoration: none;
+  color: var(--color-letter);
 }
 .container {
   display: grid;
@@ -23,8 +26,8 @@ a {
 }
 
 .header {
-  background-color: var(--color-main);
-  padding: 2rem 4rem;
+  background-color: var(--color-menu);
+  padding: 1.8rem 4rem;
 
   display: flex;
   justify-content: space-around;
@@ -39,7 +42,6 @@ a {
 }
 .myfresh {
   font-size: 1.5rem;
-
   margin-left: 1rem;
   font-weight: bold;
 }
@@ -53,17 +55,46 @@ a {
 
 .menu .menu-link {
   font-size: 1.4rem;
-  color: #808080;
   padding: 1rem 0;
 }
 .menu .menu-link:hover {
   transition: 0.2s;
-  color: #636262;
+  text-decoration: underline;
   font-weight: 600;
 }
 
+.home {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home h1 {
+  font-size: 7rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 0px var(--color-letter);
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  animation: typing 4s steps(30, end) forwards;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    text-align: center;
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
+  }
+  .home {
+    height: 77vh;
+  }
+  .home h1 {
+    font-size: 5rem;
   }
 }
