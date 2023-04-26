@@ -1,4 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
+import Posts from "@/components/Posts.tsx";
 
 export const handler: Handlers = {
   async GET(req, ctx) {
@@ -13,7 +14,7 @@ export const handler: Handlers = {
       method: "POST",
       body: JSON.stringify({
         title,
-        description,
+        body: description,
         userId: 1,
       }),
       headers: {
@@ -25,40 +26,48 @@ export const handler: Handlers = {
     /**@error return null */
     if (!data) return await ctx.render(null);
 
-    return await ctx.render(data);
+    const headers = new Headers();
+    headers.set("location", "/posts");
+    await ctx.render([data]);
+
+    return new Response(null, {
+      status: 303,
+      headers,
+    });
   },
 };
 
 function PagePublic(props: PageProps) {
-  console.log(props.data);
   return (
-    <div class="container-form">
-      <form class="form-container" method="POST">
-        <p class="content-title">
-          <label class="title">¿Que estas sientiendo?</label>
-          <input
-            type="text"
-            name="title"
-            class="form-title"
-            placeholder="Tengo Sueño..."
-            autoComplete="off"
-          />
-        </p>
-        <p class="content-description">
-          <label class="description">¿Que estas pensando?</label>
-          <textarea
-            name="description"
-            class="form-description"
-            rows={4}
-            placeholder="Dormir en Dubai..."
-            autoComplete="off"
-          ></textarea>
-        </p>
-        <p class="content-button">
-          <button type="submit">public</button>
-        </p>
-      </form>
-    </div>
+    <>
+      <div class="container-form">
+        <form class="form-container" method="POST">
+          <p class="content-title">
+            <label class="title">¿Que estas sientiendo?</label>
+            <input
+              type="text"
+              name="title"
+              class="form-title"
+              placeholder="Tengo Sueño..."
+              autoComplete="off"
+            />
+          </p>
+          <p class="content-description">
+            <label class="description">¿Que estas pensando?</label>
+            <textarea
+              name="description"
+              class="form-description"
+              rows={4}
+              placeholder="Dormir en Dubai..."
+              autoComplete="off"
+            ></textarea>
+          </p>
+          <p class="content-button">
+            <button type="submit">public</button>
+          </p>
+        </form>
+      </div>
+    </>
   );
 }
 
